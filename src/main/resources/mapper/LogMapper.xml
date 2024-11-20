@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kpaas.kpaasproject.mapper.LogMapper">
+
+    <select id="findUserPwd" resultType="String">
+        select userPwd from usertbl where userId = #{userId}
+    </select>
+
+    <select id="getUserInfoById" resultType="com.kpaas.kpaasproject.dto.UserDTO">
+        select * from usertbl where userId = #{userId}
+    </select>
+
+    <!-- 카카오 정보 찾기 -->
+    <select id="findKakao" parameterType="java.util.HashMap" resultType="UserDTO">
+	<![CDATA[
+        SELECT *
+        FROM usertbl
+        WHERE userName = #{userName}
+        ]]>
+</select>
+
+    <!-- 카카오 회원 정보 저장 -->
+    <insert id="kakaoInsert" parameterType="java.util.HashMap">
+        INSERT INTO usertbl (userId, userName)
+        VALUES (#{userId}, #{userName})
+    </insert>
+
+    <select id="findUserByNameAndPhone" resultType="String">
+        SELECT userId
+        FROM usertbl
+        WHERE userName = #{userName}
+          AND userPhoneNum = #{userPhoneNum}
+    </select>
+
+    <select id="findUserByIdNamePhone" parameterType="map" resultType="UserDTO">
+        SELECT *
+        FROM usertbl
+        WHERE userId = #{userId}
+          AND userName = #{userName}
+          AND userPhoneNum = #{userPhoneNum}
+    </select>
+
+    <!-- 비밀번호 업데이트 -->
+    <update id="updatePassword" parameterType="map">
+        UPDATE usertbl
+        SET userPwd = #{userPwd}
+        WHERE userId = #{userId}
+    </update>
+
+</mapper>

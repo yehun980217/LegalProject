@@ -1,0 +1,33 @@
+.pagination {
+    text-align: center; /* 가운데 정렬 */
+    margin: 20px 0; /* 위아래 여백 */
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 5px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #007bff; /* 마우스 오버 시 파란색 배경 */
+    color: white; /* 마우스 오버 시 글자색 흰색 */
+}
+
+.pagination a.active {
+    font-weight: bold;
+    background-color: #007bff; /* 활성화된 페이지는 파란색 배경 */
+    color: white; /* 활성화된 페이지는 흰색 글자 */
+    border-color: #007bff;
+}
+
+.pagination a:focus {
+    outline: none;
+    box-shadow: 0 0 5px #007bff; /* 포커스 상태에 그림자 */
+}

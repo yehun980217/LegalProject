@@ -1,0 +1,191 @@
+#signupSection {
+    height: 100%;
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+#signupContainer {
+    width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* form을 대체한 div 컨테이너에 대한 스타일 */
+.signup-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form-container h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* form-group: 인풋과 버튼이 한 줄에 배치 */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-right: 15px;
+    font-weight: bold;
+    color: #333;
+    width: 130px;
+    text-align: right;
+}
+
+/* input 필드 및 버튼 스타일 */
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group select {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+/* 우편번호와 출생연도 필드 크기 줄이기 */
+.birth-group select,
+#sample4_postcode {
+    width: calc(33% - 10px);
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+/* 버튼 스타일 */
+.form-group button,
+.form-group input[type="button"] {
+    padding: 12px 20px;
+    font-size: 14px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border:none;
+}
+
+/* 버튼 hover 효과 */
+.form-group button:hover,
+.form-group input[type="button"]:hover {
+    background-color: #0066d2;
+    color: #fff;
+}
+
+/* 에러 메시지 */
+.error-message {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* 우편번호 찾기 버튼 */
+#postcodeButton {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 150px;
+    margin-bottom: 10px;
+    border:none;
+}
+
+#postcodeButton:hover {
+    background-color: #0066d2;
+    color: #fff;
+}
+
+/* 주소 입력 필드 */
+#sample4_roadAddress,
+#sample4_detailAddress {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+/* 생년월일 그룹 스타일 */
+.birth-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* 생년월일 필드 */
+.birth-group select {
+    width: 30%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    appearance: none;
+    background-color: white;
+    color: #333;
+    background-image: url('https://cdn-icons-png.flaticon.com/16/32/32439.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+.birth-group select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+/* 회원가입 버튼 */
+#signUpBtn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+    border:none;
+}
+
+#signUpBtn:hover {
+    background-color: #0066d2;
+    color: #fff;
+}
+
+/* 커스텀 알림창 */
+.custom-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #333;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+    width: 300px;
+}
+
+#closeAlertBtn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border:none;
+}
+
+#closeAlertBtn:hover {
+    background-color: #0066d2;
+    color:#fff;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kpaas.kpaasproject.mapper.CaseMapper">
+
+    <!-- case_summary로 판례를 검색하는 쿼리 -->
+    <select id="findCaseBySummary" resultType="com.kpaas.kpaasproject.dto.CaseDTO">
+        SELECT
+        id,
+        case_title AS caseTitle,
+        court_name AS courtName,
+        judgment_date AS judgmentDate,
+        case_summary AS caseSummary,
+        class_name AS className,
+        (
+        <foreach collection="keywords" item="keyword" separator="+">
+            CASE WHEN case_summary LIKE CONCAT('%', #{keyword}, '%') THEN 1 ELSE 0 END
+        </foreach>
+        ) AS match_count
+        FROM cases
+        WHERE
+        (
+        <foreach collection="keywords" item="keyword" separator="OR">
+            case_summary LIKE CONCAT('%', #{keyword}, '%')
+        </foreach>
+        )
+        HAVING match_count > 0
+        ORDER BY match_count DESC
+        LIMIT #{size} OFFSET #{offset}  <!-- 페이징 처리 -->
+    </select>
+
+
+    <!-- 키워드를 사용하여 판례를 검색하는 쿼리 -->
+    <select id="findCasesByKeyword" resultType="com.kpaas.kpaasproject.dto.CaseDTO">
+        SELECT id,
+               case_title AS caseTitle,
+               court_name AS courtName,
+               judgment_date AS judgmentDate,
+               case_summary AS caseSummary,
+               class_name AS className
+        FROM cases
+        WHERE case_summary LIKE CONCAT('%', #{keyword}, '%')
+            LIMIT #{size} OFFSET #{offset}
+    </select>
+
+    <!-- 판례 ID로 특정 판례를 가져오는 쿼리 -->
+    <select id="getCaseById" resultType="com.kpaas.kpaasproject.dto.CaseDTO">
+        SELECT id, case_title AS caseTitle, court_name AS courtName, judgment_date AS judgmentDate, case_summary AS caseSummary
+        FROM cases
+        WHERE id = #{id}
+    </select>
+
+</mapper>

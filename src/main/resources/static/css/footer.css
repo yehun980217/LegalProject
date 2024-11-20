@@ -1,0 +1,59 @@
+/* Footer 스타일 */
+.footer {
+  background-color: #151010;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  flex-wrap: wrap;
+}
+
+.footer-left h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.footer-left p {
+  font-size: 14px;
+  margin: 0;
+  color: #bbbbbb;
+}
+
+.footer-right .social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-right .social-icons li {
+  list-style: none;
+}
+
+.footer-right .social-icons a img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.footer-right .social-icons a img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  background-color: #151010;
+  padding: 10px 0;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #bbbbbb;
+}

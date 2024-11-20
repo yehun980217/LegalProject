@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kpaas.kpaasproject.mapper.UserMapper">
+
+    <!-- 회원가입 시 아이디 중복 검사 -->
+    <select id="getUserId" resultType="String">
+        select userId from usertbl
+    </select>
+
+    <!-- 회원 정보 삽입 -->
+    <insert id="insertUser">
+        INSERT INTO usertbl (
+            userId, userPwd, userPhoneNum, userName, userAddress, userRegDate,
+            userGrade, userResignYn, userBirth
+        ) VALUES (
+                     #{userId}, #{userPwd}, #{userPhoneNum}, #{userName}, #{userAddress},
+                     NOW(), 'user', 'n', #{userBirth}
+                 )
+    </insert>
+
+    <delete id="deleteUserById" parameterType="String">
+        DELETE FROM usertbl
+        WHERE userId = #{userId}
+    </delete>
+</mapper>

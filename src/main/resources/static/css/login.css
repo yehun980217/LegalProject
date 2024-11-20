@@ -1,0 +1,148 @@
+/* 로그인 부모 컨테이너 (기존 body 스타일을 적용) */
+.login-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* 로그인 컨테이너 */
+.login-container {
+    background-color: white;
+    width: 350px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.login-container label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.divider {
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.login-container a {
+    display: block;
+    font-size: 14px;
+    color: #6c757d;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border:none;
+}
+
+.login-btn:hover {
+    background-color: #0066d2;
+    color: #fff;
+}
+
+/* 소셜 로그인 버튼 스타일 */
+.social-btn {
+    background-color: #f7e600;
+    color: #3d1e1e;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.social-btn.naver {
+    background-color: #03c75a;
+    color: white;
+}
+
+.social-btn:hover {
+    opacity: 0.9;
+}
+
+.hidden {
+    display: none;
+}
+
+.custom-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #333;
+    z-index: 1000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.custom-alert p {
+    margin-bottom: 20px;
+}
+
+.custom-alert button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    border:none;
+}
+
+.custom-alert button:hover {
+    background-color: #0066d2;
+    color: #fff;
+}
+
+/* 배경 어둡게 */
+.custom-alert-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.logoBox {
+    margin:0;
+}
+
+.logoBox img {
+    width:300px;
+    height: 150px;
+}

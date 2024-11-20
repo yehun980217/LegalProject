@@ -1,0 +1,308 @@
+.results-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/*.case-item {*/
+/*    border: 1px solid #ddd;*/
+/*    padding: 15px;*/
+/*    margin-bottom: 15px;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+.case-item h2 a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.case-item h2 a:hover {
+    text-decoration: underline;
+}
+
+.case-date {
+    color: #888;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 10px;
+    border: 1px solid #007BFF;
+    color: #007BFF;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.pagination a.active {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.pagination a:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* 판례 상세 정보 컨테이너 스타일 */
+.case-detail-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+}
+
+.back-button:hover {
+    background-color: #0066d2;
+}
+
+.situation-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.situation-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    resize: none; /* 사용자가 크기 조절을 못하게 함 */
+}
+
+.submit-button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.submit-button:hover {
+    background-color: #0066d2;
+}
+
+/* 원문보기, 요약보기 버튼 스타일 */
+.view-toggle-button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.view-toggle-button:hover {
+    background-color: #0066d2;
+}
+
+.view-toggle-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+
+.situation-banner {
+    text-align: center; /* 텍스트 중앙 정렬 */
+    padding: 20px;
+}
+
+.situation-banner h3 {
+    font-size: 1.5rem; /* 원하는 폰트 크기로 조정 */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.situation-banner hr {
+    width: 50%; /* 원하는 너비로 설정 */
+    margin: 0 auto; /* 수평으로 중앙 정렬 */
+    border: 2px solid #333; /* 선의 스타일 설정 */
+}
+
+.keywords-section {
+    text-align: center;
+}
+
+.keyword {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 50px;
+    background-color: red;
+    color: white;
+    cursor: pointer; /* 클릭 가능하도록 마우스 커서를 손가락 모양으로 변경 */
+    text-decoration: none;
+}
+
+.keyword:hover {
+    background-color: darkred; /* 마우스 오버 시 색상 변경 */
+}
+
+.case-type {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+}
+
+.case-type.민사 {
+    background-color: blue; /* 민사일 경우 파랑색 */
+}
+
+.case-type.행정 {
+    background-color: orange; /* 행정일 경우 주황색 */
+}
+
+.case-type[class*="형사"] {
+    background-color: red;
+}
+
+.case-type.근로자 {
+    background-color: green;
+}
+
+.case-type.기업 {
+    background-color: skyblue; /* 민사일 경우 파랑색 */
+}
+
+.case-type[class*="개인정보"] {
+    background-color: purple;
+}
+
+.case-type.금융조세 {
+    background-color: #8efa7a;
+}
+
+.case-type[class*="특허"] {
+    background-color: hotpink;
+}
+
+.case-type.가사 {
+    background-color: gray;
+}
+
+/* 모달 창 기본 스타일 */
+.modal {
+    display: none; /* 처음에는 숨김 */
+    position: fixed; /* 화면에 고정된 위치 */
+    z-index: 1000; /* 화면에서 가장 위에 나타남 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    overflow: auto; /* 스크롤 가능 */
+}
+
+/* 모달 콘텐츠 스타일 */
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.modal-content p {
+    color: #333;
+}
+
+/* 모달 닫기 버튼 */
+.close-btn {
+    color: #007BFF;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+}
+
+.close-btn:visited {
+    display: none;
+}
+
+
+
+
+.case-summary {
+    color: #333;
+}
+
+
+.case-summary-text {
+    white-space: pre-wrap;  /* 공백 및 줄바꿈을 유지 */
+    line-height: 1.8;       /* 줄 간격을 넓혀 가독성 향상 */
+    font-size: 1rem;        /* 폰트 크기 조정 */
+    font-family: 'Arial', sans-serif; /* 좀 더 읽기 쉬운 폰트 설정 */
+    color: #333;            /* 텍스트 색상 */
+    background-color: #f8f8f8; /* 배경 색상 */
+    padding: 10px;          /* 텍스트 패딩 추가 */
+    border-radius: 5px;     /* 모서리 둥글게 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 살짝 그림자 효과 */
+    max-height: 300px;      /* 너무 길면 일정 높이로 제한 */
+    overflow-y: auto;       /* 넘치는 부분은 스크롤 처리 */
+}
+
+
+#case-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 중앙에 배치 */
+    gap: 15px; /* 아이템 간 간격 */
+}
+
+.case-item {
+    width: 100%;
+    max-width: 600px; /* case-item의 최대 너비를 설정 */
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+
+/* 사전 */
+#bookmark-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+#bookmark-icon.bookmarked {
+    color: gold;
+}
+
+#bookmark-icon.unbookmarked {
+    color: #ccc;
+}

@@ -1,0 +1,237 @@
+.guide-section {
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 200px;
+    background-color: #fff; /* 메인 박스와 동일한 배경색 */
+}
+
+.guide-section h1 {
+    font-size: 7rem;
+    margin-bottom: 40px;
+}
+
+.guide-section h2 {
+    font-size: 5rem;
+    margin-bottom: 40px;
+}
+
+/* 기본 상태에서 글자는 보이지 않고 아래쪽에 위치 */
+.wave-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* 보여질 때 애니메이션 효과 적용 */
+.wave-text.show span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 각 글자마다 다른 딜레이를 적용하여 순차적으로 애니메이션 */
+.wave-text span:nth-child(1) { transition-delay: 0.1s; }
+.wave-text span:nth-child(2) { transition-delay: 0.3s; }
+.wave-text span:nth-child(3) { transition-delay: 0.5s; }
+.wave-text span:nth-child(4) { transition-delay: 0.8s; color: red; }
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.guide-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.guide-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.guide-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.guide-header p {
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+}
+
+.guide-step {
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.step-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: red;
+    margin-right: 20px;
+}
+
+.step-description h3 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.step-description p {
+    font-size: 16px;
+    margin: 5px 0 0;
+    color: #333;
+}
+
+.step-icon img {
+    width: 60px;
+    height: 60px;
+}
+
+.step-icon {
+    margin-left: auto;
+}
+
+
+
+/* 숨겨진 상태에서 시작 */
+.section-container {
+    opacity: 0;
+    transform: translateY(50px); /* 약간 아래쪽에서부터 올라오는 효과 */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 보이기 시작할 때의 상태 */
+.section-container.show {
+    opacity: 1;
+    transform: translateY(0); /* 원래 위치로 */
+}
+
+/* 가이드 섹션 공통 스타일 */
+.section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 200px;
+}
+
+/* 이미지 왼쪽, 텍스트 오른쪽 */
+.section-container .image-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.section-container .text-right {
+    flex: 1;
+    padding-left: 20px; /* 이미지와 텍스트 사이의 간격 */
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.section-container.reverse .text-left {
+    flex: 1;
+    padding-right: 20px; /* 텍스트와 이미지 사이의 간격 */
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left:300px;
+}
+
+.section-container.reverse .image-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* 이미지 스타일 */
+.content-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* 숨겨진 상태에서 시작 */
+.section-container {
+    opacity: 0;
+    transform: translateY(50px); /* 약간 아래쪽에서부터 올라오는 효과 */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 보이기 시작할 때의 상태 */
+.section-container.show {
+    opacity: 1;
+    transform: translateY(0); /* 원래 위치로 */
+}
+
+.guide-section {
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 200px;
+    background-color: #fff; /* 메인 박스와 동일한 배경색 */
+}
+
+.guide-section h1 {
+    font-size: 7rem;
+    margin-bottom: 40px;
+}
+
+
+
+
+
+/* 4번 섹션에 대한 특별한 스타일링 */
+.section-container.section-4 {
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    justify-content: center;
+    align-items: center; /* 텍스트와 이미지 모두 중앙 정렬 */
+    width: 100%;
+}
+
+.section-container.section-4 .image-full {
+    width: 100%; /* 이미지가 화면 너비 전체를 차지하도록 설정 */
+    display: flex;
+    justify-content: center; /* 이미지 자체도 중앙에 배치 */
+}
+
+.section-container.section-4 .image-full img {
+    width: 100vw; /* 화면 너비 전체를 차지하게 설정 */
+    height: auto; /* 비율에 맞춰 높이를 자동 조정 */
+    object-fit: cover; /* 이미지가 화면에 꽉 차도록 유지 */
+    max-width: none; /* 기본 max-width 제한 해제 */
+}
+
+/* 이미지 아래 텍스트 중앙 정렬 */
+.section-container.section-4 .text-below {
+    text-align: center; /* 텍스트 중앙 정렬 */
+    margin-top: 20px; /* 이미지와 텍스트 사이 간격 */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* 배경을 반투명하게 설정하여 텍스트가 잘 보이게 */
+    width: 100%; /* 텍스트가 가로 전체를 차지하도록 설정 */
+}
+
+.section-container.section-4 .text-below h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.section-container.section-4 .text-below p {
+    font-size: 1.2rem;
+}
+
+/* 반응형 처리 */
+@media (min-width: 768px) {
+    .section-container.section-4 .image-full img {
+        height: 100vh; /* 높이를 화면 전체 높이로 설정 */
+    }
+}

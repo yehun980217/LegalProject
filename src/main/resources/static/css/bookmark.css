@@ -1,0 +1,98 @@
+/* 북마크 리스트 */
+.bookmark-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 북마크된 판례 목록 */
+#case-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;  /* 아이템 간 간격 */
+}
+
+.case-item {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.case-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.case-type {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;
+}
+
+.case-type.민사 { background-color: #007BFF; }
+.case-type.행정 { background-color: #FF8C00; }
+.case-type.형사 { background-color: #FF6347; }
+
+.case-summary {
+    margin-top: 10px;
+    color: #666;
+}
+
+/* 제목 */
+.generated-case-title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 북마크 아이콘 */
+#bookmark-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+#bookmark-icon.bookmarked {
+    color: gold;
+}
+
+#bookmark-icon.unbookmarked {
+    color: #ccc;
+}
+
+.no-results {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+}
+
+/* 하단 버튼 (검색으로 돌아가기) */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}

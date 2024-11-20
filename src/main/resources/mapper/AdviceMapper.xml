@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kpaas.kpaasproject.mapper.AdviceMapper">
+
+    <!-- 키워드를 사용하여 판례를 검색하는 쿼리 -->
+    <select id="findCasesByKeywords" resultType="com.kpaas.kpaasproject.dto.CaseDTO">
+        SELECT id, case_title AS caseTitle, court_name AS courtName, judgment_date AS judgmentDate, case_summary AS caseSummary
+        FROM cases
+        WHERE
+        <foreach collection="keywords" item="keyword" separator="AND">
+            case_summary LIKE CONCAT('%', #{keyword}, '%')
+        </foreach>
+    </select>
+
+</mapper>

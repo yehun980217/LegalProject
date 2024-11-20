@@ -1,0 +1,312 @@
+.my-page-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+    max-width: 1200px;
+}
+
+/* 좌측: 사용자 정보 메뉴 */
+.user-info-menu {
+    width: 25%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.user-info-menu h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.user-info-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.user-info-list li {
+    margin-bottom: 10px;
+}
+
+.button-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-section .btn {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-section .btn:hover {
+    background-color: #0056b3;
+}
+
+/* 중앙: 북마크 리스트 */
+.bookmark-list-section {
+    width: 50%;
+    padding: 20px;
+}
+
+.case-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.case-item h2 a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.case-item h2 a:hover {
+    text-decoration: underline;
+}
+
+/* 우측: 빈 공간 */
+.right-section {
+    width: 20%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* 슬라이드 컨테이너 스타일 */
+/* 슬라이드 컨테이너 스타일 */
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slider-item {
+    display: none;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.slider-item h2 a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.slider-item h2 a:hover {
+    text-decoration: underline;
+}
+
+/* 네비게이션 버튼을 아래로 이동 */
+.slide-navigation {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.prev-slide, .next-slide {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.prev-slide:hover, .next-slide:hover {
+    background-color: #0056b3;
+}
+
+.my-page-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+    max-width: 1200px;
+    height: calc(100vh - 100px); /* 화면에 꽉 차도록 높이 설정 */
+    background: linear-gradient(to bottom right, #f0f4ff, #ffffff); /* 부드러운 배경 그라디언트 */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+}
+
+/* 좌측: 사용자 정보 메뉴 */
+.user-info-menu {
+    width: 30%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.user-info-menu h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.user-info-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.user-info-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.button-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-section .btn {
+    display: inline-block;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.button-section .btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* 살짝 확대 효과 */
+}
+
+/* 중앙: 북마크 리스트 */
+.bookmark-list-section {
+    width: 65%;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bookmark-list-section h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.case-summary {
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* 슬라이드 컨테이너 */
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    gap: 20px; /* 슬라이드 간격 추가 */
+}
+
+.slider-item {
+    display: none;
+    flex: 0 0 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.slider-item h2 a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.slider-item h2 a:hover {
+    text-decoration: underline;
+}
+
+/* 슬라이드 네비게이션 */
+.slide-navigation {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.prev-slide, .next-slide {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.prev-slide:hover, .next-slide:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* 버튼 확대 효과 */
+}
+
+/* 모바일 및 태블릿 반응형 스타일 */
+@media screen and (max-width: 768px) {
+    .my-page-container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .user-info-menu, .bookmark-list-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .slider-wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+

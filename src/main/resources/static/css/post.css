@@ -1,0 +1,362 @@
+.post-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    color: #333;
+    text-align: center; /* 기본적으로 가운데 정렬 */
+}
+
+.post-th, .post-td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.post-th-small {
+    width: 120px;  /* 번호, 작성자, 작성일 칸 좁게 */
+}
+
+.post-th-title {
+    width: 60%;
+    text-align: left;  /* 제목 칸 왼쪽 정렬 */
+}
+
+.post-td-title {
+    width: 60%;
+    text-align: left;  /* 제목 칸 왼쪽 정렬 */
+}
+
+.post-link {
+    /*display: inline-block;*/
+    width: 100%;  /* 제목이 셀을 넘어가지 않도록 설정 */
+    color: #007bff;
+    text-decoration: none;
+}
+
+.post-link:hover {
+    text-decoration: underline;
+}
+
+.post-tr {
+    transition: background-color 0.3s ease;
+}
+.post-tr:hover {
+    background-color: #f0f0f0; /* hover 시 회색 */
+}
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #333;
+}
+.pagination a.active {
+    font-weight: bold;
+}
+
+/* 카테고리 색상 */
+.category-label {
+    border-radius: 3px;
+    text-align: left; /* 카테고리도 왼쪽 정렬 */
+}
+.category-label.질문 {
+    color: #ff4a4a;
+}
+.category-label.정보 {
+    color: #5858ff;
+}
+.category-label.자유 {
+    color: #45ffad;
+}
+
+
+.category-links {
+    text-align: center; /* 중앙 정렬 */
+    margin-bottom: 20px;
+    margin-top: 20px;  /* 헤더와의 간격을 확보 */
+    position: relative;
+    z-index: 1;  /* 헤더 위로 카테고리 선택창이 나오도록 설정 */
+}
+
+.category-links a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+.category-links a.active {
+    font-weight: bold;
+    color: #007bff; /* 활성화된 링크는 파란색 */
+}
+
+.category-links a:hover {
+    color: #007bff; /* 마우스 오버 시 색 변경 */
+}
+
+.active-category {
+    font-weight: bold; /* 선택된 카테고리 굵게 */
+    color: #000; /* 선택된 카테고리 색 진하게 */
+}
+
+/* 글 작성 버튼 스타일 */
+.write-post-btn-container {
+    text-align: right;  /* 버튼이 오른쪽에 위치하도록 설정 */
+    margin-bottom: 20px;  /* 버튼과 게시글 목록 사이 간격 */
+}
+
+.write-post-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.write-post-btn:hover {
+    background-color: #0056b3;  /* 호버 시 색상 변경 */
+    color: white;
+    text-decoration: none;
+}
+
+/*글 작성 css*/
+/* 폼 전체 스타일 */
+.post-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 */
+.form-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 라벨 */
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 셀렉트 박스 */
+.form-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* 입력 필드 */
+.form-input,
+.form-textarea,
+.form-file {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* 텍스트 영역 */
+.form-textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+/* 파일 업로드 필드 */
+.form-file {
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* 제출 버튼 */
+.form-submit-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit-btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/*상세보기 css*/
+/* 게시글 상세 보기 스타일 */
+.post-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.post-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #888;
+}
+
+.post-content {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 300px;
+}
+
+.post-images {
+    margin-bottom: 20px;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.post-comments {
+    margin-top: 30px;
+}
+
+.comment {
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.comment-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.comment-form {
+    margin-top: 20px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.comment-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.comment-form button:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete {
+    background-color: #ff4a4a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    position: absolute;
+    top:40%;
+    right: 10px;
+}
+
+.btn-delete:hover {
+    background-color: #e60000;
+}
+
+/* 수정 및 삭제 버튼 스타일 */
+.post-actions {
+    margin-top: 15px;
+    display: flex;  /* 수정과 삭제 버튼을 가로로 나란히 배치 */
+    gap: 10px;      /* 버튼 간의 간격을 10px로 설정 */
+    align-items: baseline
+}
+
+/* 수정 버튼 */
+.btn-edit, .form-delete-btn {
+    background-color: #007bff; /* 수정 버튼 색 */
+    color: white;
+    padding: 10px 20px;  /* 동일한 크기 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px; /* 동일한 글자 크기 */
+    display: inline-block;
+}
+
+/* 수정 버튼 hover */
+.btn-edit:hover, .form-delete-btn:hover {
+    background-color: #0056b3;
+}
+
+/* 삭제 버튼 */
+.btn-delete {
+    background-color: #f44336; /* 삭제 버튼 색 */
+    color: white;
+    padding: 10px 20px;  /* 동일한 크기 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* 동일한 글자 크기 */
+    display: inline-block;
+}
+
+/* 삭제 버튼 hover */
+.btn-delete:hover {
+    background-color: #e53935;
+}
+
+
+

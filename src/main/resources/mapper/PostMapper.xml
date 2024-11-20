@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kpaas.kpaasproject.mapper.PostMapper">
+
+    <!-- 페이징 처리된 게시글 목록 조회 -->
+    <select id="getPostsByPage" resultType="com.kpaas.kpaasproject.dto.PostDTO">
+        SELECT p.postNo, p.title, p.content, p.category, p.createdDate, u.userId
+        FROM posttbl p
+                 JOIN usertbl u ON p.userNo = u.userNo
+        ORDER BY p.createdDate DESC
+            LIMIT #{limit} OFFSET #{offset}
+    </select>
+
+    <!-- 전체 게시글 수 -->
+    <select id="getTotalPostCount" resultType="int">
+        SELECT COUNT(*) FROM posttbl
+    </select>
+
+    <select id="getCategoryTotalPostCount" resultType="int">
+        SELECT COUNT(*) FROM posttbl WHERE #{category} IS NULL OR category = #{category}
+    </select>
+
+    <!-- 관련 키워드만 리스트에 노출 -->
+    <select id="getPostsByCategory" resultType="com.kpaas.kpaasproject.dto.PostDTO">
+        SELECT p.postNo, p.title, p.content, p.category, p.createdDate, u.userId
+        FROM posttbl p
+                 JOIN usertbl u ON p.userNo = u.userNo
+        WHERE #{category} IS NULL OR category = #{category}
+        ORDER BY p.createdDate DESC
+            LIMIT #{limit} OFFSET #{offset}
+    </select>
+
+
+    <!-- 글 저장 -->
+    <insert id="insertPost" parameterType="com.kpaas.kpaasproject.dto.PostDTO" useGeneratedKeys="true" keyProperty="postNo">
+        INSERT INTO posttbl (title, content, category, userNo, createdDate)
+        VALUES (#{title}, #{content}, #{category}, #{userNo}, NOW())
+    </insert>
+
+
+    <!-- 게시글 정보 가져오기 -->
+    <select id="getPostByNo" parameterType="int" resultType="com.kpaas.kpaasproject.dto.PostDTO">
+        SELECT p.postNo, p.title, p.content, p.category, p.createdDate, u.userId, u.userNo
+        FROM posttbl p
+                 JOIN usertbl u ON p.userNo = u.userNo
+        WHERE postNo = #{postNo}
+    </select>
+
+    <!-- 게시글에 달린 댓글 가져오기 -->
+    <select id="getCommentsByPostNo" parameterType="int" resultType="com.kpaas.kpaasproject.dto.CommentDTO">
+        SELECT c.commentNo, c.postNo, c.userNo, c.content, c.createdDate, u.userId
+        FROM commenttbl c
+            JOIN usertbl u ON c.userNo = u.userNo
+        WHERE postNo = #{postNo}
+        ORDER BY createdDate ASC
+    </select>
+
+    <insert id="insertComment" parameterType="CommentDTO">
+        INSERT INTO commenttbl (postNo, userNo, content, createdDate)
+        VALUES (#{postNo}, #{userNo}, #{content}, NOW())
+    </insert>
+
+    <select id="getCommentByNo" parameterType="int" resultType="CommentDTO">
+        SELECT * FROM commenttbl WHERE commentNo = #{commentNo}
+    </select>
+
+    <delete id="deleteComment" parameterType="int">
+        DELETE FROM commenttbl WHERE commentNo = #{commentNo}
+    </delete>
+
+    <update id="updatePost" parameterType="com.kpaas.kpaasproject.dto.PostDTO">
+        UPDATE posttbl
+        SET title = #{title}, content = #{content}, category = #{category}, updatedDate = NOW()
+        WHERE postNo = #{postNo}
+    </update>
+
+    <delete id="deletePost" parameterType="int">
+        DELETE FROM posttbl WHERE postNo = #{postNo}
+    </delete>
+
+
+
+
+    <select id="countUserPosts" parameterType="int" resultType="int">
+        SELECT COUNT(*) FROM posttbl WHERE userNo = #{userNo}
+    </select>
+
+    <select id="findPostsByUser" resultType="com.kpaas.kpaasproject.dto.PostDTO">
+        SELECT * FROM posttbl
+        WHERE userNo = #{userNo}
+        ORDER BY createdDate DESC
+            LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="countUserComments" parameterType="int" resultType="int">
+        SELECT COUNT(*) FROM commenttbl WHERE userNo = #{userNo}
+    </select>
+
+    <select id="findCommentsByUser" resultType="com.kpaas.kpaasproject.dto.CommentDTO">
+        SELECT * FROM commenttbl
+        WHERE userNo = #{userNo}
+        ORDER BY createdDate DESC
+            LIMIT #{offset}, #{pageSize}
+    </select>
+</mapper>

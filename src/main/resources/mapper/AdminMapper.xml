@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kpaas.kpaasproject.mapper.AdminMapper">
+    <!-- 회원 정보 삽입 -->
+    <insert id="insertAdmin">
+        INSERT INTO usertbl (
+            userId, userPwd, userPhoneNum, userName, userAddress, userRegDate,
+            userGrade, userResignYn, userBirth
+        ) VALUES (
+                     #{userId}, #{userPwd}, NULL, '관리자', NULL,
+                     NOW(), 'admin', 'n', NULL
+                 )
+    </insert>
+</mapper>

@@ -1,0 +1,143 @@
+/* 기본 설정 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h3, p {
+    margin-top: 30px;
+    text-align: center;
+    color: #333;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-top: 10px;
+}
+
+input[type="text"], input[type="password"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* 인증 관련 필드 */
+#verificationFields, #signOutSection {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.input-field {
+    flex: 1;
+}
+
+.send-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.send-btn:hover {
+    background-color: #0056b3;
+}
+
+/* 커스텀 알림창 */
+.custom-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    display: none;
+    z-index: 1000;
+}
+
+.custom-alert p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.custom-alert button {
+    background-color: #007bff;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 480px) {
+    form {
+        padding: 15px;
+    }
+
+    .custom-alert {
+        width: 90%;
+    }
+
+    button, .send-btn {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+}

@@ -1,0 +1,117 @@
+.news-container {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.news-container h1 {
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* 뉴스 테이블 스타일 */
+.news-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    text-align: center;
+    table-layout: auto;
+}
+
+.news-table thead {
+    background-color: #f1f1f1;
+    border-bottom: 2px solid #ddd;
+}
+
+.news-table th, .news-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.news-table th {
+    font-weight: bold;
+    font-size: 16px;
+    color: #555;
+}
+
+.news-table td {
+    font-size: 14px;
+    color: #333;
+    word-wrap: break-word;
+}
+
+/* 번호 칸, 날짜 칸의 넓이를 줄임 */
+.news-table td:first-child {
+    width: 10%;
+    color: #666;
+    font-weight: bold;
+}
+
+.news-table td:last-child {
+    width: 15%;
+    color: #888;
+}
+
+/* 제목을 더 이쁘게 보이게 설정 */
+.news-table td a {
+    color: #0066cc;
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.news-table td a:hover {
+    color: #ff6600;
+    text-decoration: underline;
+}
+
+.news-table tbody tr:hover {
+    background-color: #f9f9f9; /* 마우스 오버 시 배경색 변경 */
+}
+
+/* 테이블에 그림자 추가 */
+.news-table {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.news-container p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .news-table th:first-child,
+    .news-table th:last-child,
+    .news-table td:first-child,
+    .news-table td:last-child {
+        display: none; /* 작은 화면에서는 번호, 날짜를 숨김 */
+    }
+
+    .news-table th,
+    .news-table td {
+        font-size: 12px;
+        text-align: left;
+    }
+
+    .news-table td a {
+        font-size: 14px; /* 제목 크기를 적절히 유지 */
+    }
+
+    .news-container h1 {
+        font-size: 24px;
+    }
+
+    .news-table thead {
+        display: none; /* 제목 타이틀(열 제목)도 숨김 */
+    }
+}

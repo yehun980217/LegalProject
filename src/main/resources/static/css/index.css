@@ -1,0 +1,255 @@
+/* 메인 박스 스타일 */
+.main-box {
+  background-color: #fff;
+}
+
+/* 배경 이미지 */
+.slide:nth-child(1) {
+  /*background-image: url('../images/logo.png'); !* 배경 이미지 경로 *!*/
+  /*background-size: cover;*/
+  /*background-position: center;*/
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center;
+  align-content: space-around;
+}
+
+.slide:nth-child(2) {
+  /*background-image: url('../images/main_bg2.jpg'); !* 배경 이미지 경로 *!*/
+  /*background-size: cover;*/
+  /*background-position: center;*/
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center;
+  align-content: space-around
+}
+
+/* 컨텐츠 컨테이너 */
+/* 컨텐츠 컨테이너: intro-text와 버튼을 감싸는 요소 */
+.content-container {
+  display: flex;
+  flex-direction: column; /* 수직으로 쌓이도록 설정 */
+  justify-content: center; /* 수직 중앙 정렬 */
+  align-items: center; /* 수평 중앙 정렬 */
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 소개 텍스트 */
+.intro-text h1 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.intro-text h2 {
+  color: #000;
+  font-size: 5rem;
+}
+
+.intro-text p {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* 서비스 버튼 */
+.service-button {
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #007BFF;
+  background-color: transparent;
+  color: #007BFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 20px; /* 버튼과 텍스트 사이 간격 */
+}
+
+.service-button:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* About 섹션 */
+.about-section {
+  text-align: center;
+  padding: 200px 20px;
+  background-color: #fff; /* 메인 박스와 동일한 배경색 */
+}
+
+.about-section h1 {
+  font-size: 7rem;
+  color: #000;
+  margin-bottom: 40px;
+}
+
+.section-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* 반응형을 위해 줄 바꿈 허용 */
+}
+
+.text-left, .text-right {
+  flex: 1;
+  color: #333;
+  padding: 20px;
+  min-width: 250px; /* 최소 너비 설정 */
+}
+
+.text-left h3, .text-right h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.text-left p, .text-right p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  .section-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-left, .text-right {
+    padding: 10px;
+    max-width: 100%;
+  }
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%; /* 화면의 중앙에 위치 */
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev {
+  left: 0; /* 왼쪽 끝에 위치 */
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0; /* 오른쪽 끝에 위치 */
+  border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+/* 슬라이더 페이드 효과 */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: 0.4}
+  to {opacity: 1}
+}
+
+
+
+
+
+
+
+
+/* 부모 요소를 기준으로 자식 요소의 위치 설정 */
+.about-section .text-left,
+.about-section .text-right {
+  position: relative; /* p 태그의 위치를 relative로 기준 */
+  min-height: 100px; /* 부모 요소에 최소 높이 설정 */
+}
+
+/* h3와 p의 기본 상태 설정 - 위치를 동일하게 맞춤 */
+.about-section .text-left h3,
+.about-section .text-right h3 {
+  transition: transform 1s ease, opacity 1s ease;
+  backface-visibility: hidden;
+  position: absolute; /* p와 동일한 위치에 배치하기 위해 absolute 사용 */
+  top: 0;
+  left: 0;
+  width: 100%; /* 부모 요소의 전체 너비 차지 */
+  height: 100%; /* 부모 요소의 전체 높이 차지 */
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  transform: rotateY(0deg); /* 기본 상태에서 h3가 보임 */
+  opacity: 1; /* h3가 기본으로 보이도록 설정 */
+  z-index: 2; /* h3가 p 태그 위에 표시되도록 설정 */
+}
+
+.about-section .text-left p,
+.about-section .text-right p {
+  transition: transform 1s ease, opacity 1s ease;
+  backface-visibility: hidden;
+  position: absolute; /* h3와 동일한 위치에 배치 */
+  top: 0;
+  left: 0;
+  width: 100%; /* 부모 요소의 전체 너비 차지 */
+  height: 100%; /* 부모 요소의 전체 높이 차지 */
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  transform: rotateY(180deg); /* 기본 상태에서 p는 뒤집힘 */
+  opacity: 0; /* 기본 상태에서 p는 보이지 않음 */
+  z-index: 1; /* p 태그는 h3 태그 뒤에 배치 */
+}
+
+/* hover 시 h3가 회전하여 사라지고 p가 보이게 설정 */
+.about-section .text-left:hover h3,
+.about-section .text-right:hover h3 {
+  transform: rotateY(180deg); /* h3 태그가 회전하여 사라짐 */
+  opacity: 0; /* h3 태그 서서히 사라짐 */
+}
+
+.about-section .text-left:hover p,
+.about-section .text-right:hover p {
+  transform: rotateY(0deg); /* p 태그가 회전하여 나타남 */
+  opacity: 1; /* p 태그가 서서히 보임 */
+  font-weight: bold;
+}
+
+/* hover 해제 시 다시 원래대로 돌아감 */
+.about-section .text-left:not(:hover) h3,
+.about-section .text-right:not(:hover) h3 {
+  transform: rotateY(0deg); /* h3 태그 원래 위치로 돌아옴 */
+  opacity: 1; /* 다시 h3 태그 보임 */
+}
+
+.about-section .text-left:not(:hover) p,
+.about-section .text-right:not(:hover) p {
+  transform: rotateY(180deg); /* p 태그가 다시 뒤집힘 */
+  opacity: 0; /* p 태그는 보이지 않음 */
+}
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+.situation-banner {
+    text-align: center; /* 텍스트 중앙 정렬 */
+    padding: 20px;
+}
+
+.situation-banner h3 {
+    font-size: 1.5rem; /* 원하는 폰트 크기로 조정 */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.situation-banner hr {
+    width: 50%; /* 원하는 너비로 설정 */
+    margin: 0 auto; /* 수평으로 중앙 정렬 */
+    border: 2px solid #333; /* 선의 스타일 설정 */
+}
+
+/* 입력 폼 레이아웃 */
+.situation-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 텍스트 영역과 버튼 가로 정렬 */
+.textarea-and-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* 입력 텍스트 박스 스타일 */
+.situation-textarea {
+    flex-grow: 1;
+    width: 800px;
+    height: 200px;
+    padding: 15px;
+    border: 2px solid #333;
+    resize: none;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+/* 검색 버튼 (텍스트 영역의 우측 중앙) */
+.submit-button-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.submit-button {
+    padding: 12px 30px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    height: 60px;
+    align-self: center;
+    margin-top: 30px;
+    width: 200px;
+    border:none;
+}
+
+.submit-button:hover {
+    background-color: #0066d2;
+    color: #fff;
+}
+
+/* 가이드 이미지 스타일 (텍스트 박스 하단 중앙) */
+.situation-info-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.situation-info-image img {
+    max-width: 100%;
+    height: 600px;
+}
