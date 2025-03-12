@@ -5,7 +5,7 @@
 <strong>개발 도구 </strong>
 <p>IntelliJ</p>
 <strong>언어</strong>
-<p>JAVA, MariaDB, CSS, JavaScript, JSP</p>
+<p>JAVA, MySQL, CSS, JavaScript, JSP</p>
 <strong>라이브러리</strong><br>
 <p>jQuery, Ajax, OpenAI, CoolSMS</p>
 <strong>프레임워크</strong>
